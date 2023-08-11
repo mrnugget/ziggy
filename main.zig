@@ -1,5 +1,6 @@
 const std = @import("std");
 const expect = std.testing.expect;
+const eql = std.testing.eql;
 
 fn foo(alpha: u32, b: u8) void {
     _ = b;
@@ -72,15 +73,33 @@ test "slicing and iterating" {
         Horse{ .breed = "Pony" },
     };
 
+    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+    defer arena.deinit();
+
+    const allocator = arena.allocator();
+
     for (horses, 0..) |horse, index| {
         std.debug.print("horse {d}. breed={?s}\n", .{ index, horse.breed });
 
         const coolBreed = breed: {
             if (horse.breed) |breed| {
-                break :breed breed ++ "cool";
+                const string = try std.fmt.allocPrint(allocator, "cool-{s}", .{breed});
+                // defer allocator.free(string);
+                break :breed string;
             }
             break :breed "not-cool";
         };
-        std.debug.print("cool breed: {s}", coolBreed);
+
+        std.debug.print("cool breed: {s}\n", .{coolBreed});
     }
+}
+
+test "string building" {
+    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+    defer arena.deinit();
+
+    const allocator = arena.allocator();
+
+    const string = try std.fmt.allocPrint(allocator, "{d} + {d} = {s}", .{ 9, 10, "cool" });
+    defer allocator.free(string);
 }

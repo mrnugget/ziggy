@@ -5,7 +5,7 @@
   inputs = {
     zig-overlay.url = "github:mitchellh/zig-overlay";
     zig-overlay.inputs.nixpkgs.follows = "nixpkgs";
-    zls-master.url = "github:zigtools/zls/91974a3";
+    zls-master.url = "github:zigtools/zls/7aeb758";
     zls-master.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -35,7 +35,7 @@
           # The Nix packages provided in the environment
           packages = with pkgs; [
             zig
-            zls
+            zls-master.packages."${pkgs.system}".zls
           ];
         };
       });

@@ -39,4 +39,14 @@ test "zig std parser" {
     for (ast.nodes.items(.data), 0..) |node, i| {
         std.debug.print("nodes[{}].data: {}\n", .{ i, node });
     }
+
+    // fn_decl
+    const fn_decl = ast.nodes.get(5);
+    std.debug.print("fn_decl.tag: {}\n", .{fn_decl.tag});
+    // fn_decl lhs is function prototype:
+    const fn_proto_multi = ast.nodes.get(fn_decl.data.lhs);
+    std.debug.print("fn_proto_multi.tag: {}\n", .{fn_proto_multi.tag});
+    // fn_decl rhs is function body:
+    const fn_body = ast.nodes.get(fn_decl.data.rhs);
+    std.debug.print("fn_body.tag: {}, fn_body.data: {}\n", .{ fn_body.tag, fn_body.data });
 }

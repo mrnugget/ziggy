@@ -38,11 +38,13 @@ fn internString(string_bytes: *std.ArrayListUnmanaged(u8), string_table: *String
     try string_bytes.appendSlice(gpa, string);
 
     // Now check the StringTable whether we already have it interned.
-    const gop = try string_table.getOrPutContextAdapted(gpa, string, std.hash_map.StringIndexAdapter{
+    const key_ctx = std.hash_map.StringIndexAdapter{
         .bytes = string_bytes,
-    }, std.hash_map.StringIndexContext{
+    };
+    const ctx = std.hash_map.StringIndexContext{
         .bytes = string_bytes,
-    });
+    };
+    const gop = try string_table.getOrPutContextAdapted(gpa, string, key_ctx, ctx);
 
     if (gop.found_existing) {
         // If has already been added to `string_bytes`, remove the

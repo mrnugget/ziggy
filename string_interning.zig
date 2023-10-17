@@ -3,14 +3,15 @@ const std = @import("std");
 const StringTable: type = std.HashMapUnmanaged(u32, void, std.hash_map.StringIndexContext, std.hash_map.default_max_load_percentage);
 
 test "zig std string interning" {
-    // Setup allocator
-    var gpa = std.heap.GeneralPurposeAllocator(.{}){};
-    const allocator = gpa.allocator();
+    const gpa = std.testing.allocator;
 
     // These two are exactly like `string_table`/`string_bytes` in Zig's
     // src/AstGen.zig
     var string_table: StringTable = .{};
+    defer string_table.deinit(gpa);
+
     var string_bytes: std.ArrayListUnmanaged(u8) = .{};
+    defer string_bytes.deinit(gpa);
 
     const tests = [_]struct {
         string: []const u8,
@@ -24,7 +25,7 @@ test "zig std string interning" {
     };
 
     inline for (tests) |case| {
-        const res = try internString(&string_bytes, &string_table, allocator, case.string);
+        const res = try internString(&string_bytes, &string_table, gpa, case.string);
         try std.testing.expectEqual(res, case.internedAt);
     }
 }

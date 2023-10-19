@@ -1,29 +1,5 @@
 {
   "nodes": {
-    "binned_allocator": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-m/kr4kmkG2rLkAj5YwvM0HmXTd+chAiQHzYK6ozpWlw=",
-        "type": "tarball",
-        "url": "https://gist.github.com/antlilja/8372900fcc09e38d7b0b6bbaddad3904/archive/6c3321e0969ff2463f8335da5601986cf2108690.tar.gz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://gist.github.com/antlilja/8372900fcc09e38d7b0b6bbaddad3904/archive/6c3321e0969ff2463f8335da5601986cf2108690.tar.gz"
-      }
-    },
-    "diffz": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-3CdYo6WevT0alRwKmbABahjhFKz7V9rdkDUZ43VtDeU=",
-        "type": "tarball",
-        "url": "https://github.com/ziglibs/diffz/archive/90353d401c59e2ca5ed0abe5444c29ad3d7489aa.tar.gz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://github.com/ziglibs/diffz/archive/90353d401c59e2ca5ed0abe5444c29ad3d7489aa.tar.gz"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -76,11 +52,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1689068808,
-        "narHash": "sha256-6ixXo3wt24N/melDWjq70UuHQLxGV8jZvooRanIHXw0=",
+        "lastModified": 1694529238,
+        "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "919d646de7be200f3bf08cb76ae1f09402b6f9b4",
+        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
         "type": "github"
       },
       "original": {
@@ -112,50 +88,38 @@
         ]
       },
       "locked": {
-        "lastModified": 1660459072,
-        "narHash": "sha256-8DFJjXG8zqoONA1vXtgeKXy68KdJL5UaXR8NtVMUbx8=",
+        "lastModified": 1694102001,
+        "narHash": "sha256-vky6VPK1n1od6vXbqzOXnekrQpTL4hbPAwUhT5J9c9E=",
         "owner": "hercules-ci",
         "repo": "gitignore.nix",
-        "rev": "a20de23b925fd8264fd7fad6454652e142fd7f73",
+        "rev": "9e21c80adf67ebcb077d75bd5e7d724d21eeafd6",
         "type": "github"
       },
       "original": {
         "owner": "hercules-ci",
         "repo": "gitignore.nix",
         "type": "github"
-      }
-    },
-    "known_folders": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-U/h4bVarq8CFKbFyNXKl3vBRPubYooLxA1xUz3qMGPE=",
-        "type": "tarball",
-        "url": "https://github.com/ziglibs/known-folders/archive/fa75e1bc672952efa0cf06160bbd942b47f6d59b.tar.gz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://github.com/ziglibs/known-folders/archive/fa75e1bc672952efa0cf06160bbd942b47f6d59b.tar.gz"
       }
     },
     "langref": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-UDwr6vJynfpD5SEoZzhXouoKu+Okdtpv20Vx2E5Ltcc=",
+        "narHash": "sha256-mYdDCBdNEIeMbavdhSo8qXqW+3fqPC8BAich7W3umrI=",
         "type": "file",
-        "url": "https://raw.githubusercontent.com/ziglang/zig/f1992a39a59b941f397b8501a525b38e5863a527/doc/langref.html.in"
+        "url": "https://raw.githubusercontent.com/ziglang/zig/63bd2bff12992aef0ce23ae4b344e9cb5d65f05d/doc/langref.html.in"
       },
       "original": {
         "type": "file",
-        "url": "https://raw.githubusercontent.com/ziglang/zig/f1992a39a59b941f397b8501a525b38e5863a527/doc/langref.html.in"
+        "url": "https://raw.githubusercontent.com/ziglang/zig/63bd2bff12992aef0ce23ae4b344e9cb5d65f05d/doc/langref.html.in"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1694062546,
-        "narHash": "sha256-PiGI4f2BGnZcedP6slLjCLGLRLXPa9+ogGGgVPfGxys=",
+        "lastModified": 1697379843,
+        "narHash": "sha256-RcnGuJgC2K/UpTy+d32piEoBXq2M+nVFzM3ah/ZdJzg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b200e0df08f80c32974a6108ce431d8a8a5e6547",
+        "rev": "12bdeb01ff9e2d3917e6a44037ed7df6e6c3df9d",
         "type": "github"
       },
       "original": {
@@ -194,11 +158,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1694261230,
-        "narHash": "sha256-AhvU8UZX3h5ausZN5zAU9GsYapZf6Zgqg3cY1C7RI1w=",
+        "lastModified": 1697717319,
+        "narHash": "sha256-vWIxatLvPspfHTkAiZXi4T/IgsoujjRPvkrXxlTJrjU=",
         "owner": "mitchellh",
         "repo": "zig-overlay",
-        "rev": "8dbd77151d2aa07324a66020559fef475d6802dc",
+        "rev": "cfa809b6607fa7a28369161c5a3432264dfb6e5d",
         "type": "github"
       },
       "original": {
@@ -217,11 +181,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1692706082,
-        "narHash": "sha256-DRSXY8gw4YhyXsOIrVmyC9TozkagcUYnNPhYssw4kPU=",
+        "lastModified": 1697285248,
+        "narHash": "sha256-CPV/LWV/2nJKasawkshdCX1bLRsKGtSSiDoy14jix8c=",
         "owner": "mitchellh",
         "repo": "zig-overlay",
-        "rev": "6450a09b1da7ac1af4f9698f745f0d0b5b998a40",
+        "rev": "ee376d4012e3c853123ca7083af852313235407c",
         "type": "github"
       },
       "original": {
@@ -232,11 +196,8 @@
     },
     "zls-master": {
       "inputs": {
-        "binned_allocator": "binned_allocator",
-        "diffz": "diffz",
         "flake-utils": "flake-utils_2",
         "gitignore": "gitignore",
-        "known_folders": "known_folders",
         "langref": "langref",
         "nixpkgs": [
           "nixpkgs"
@@ -244,17 +205,17 @@
         "zig-overlay": "zig-overlay_2"
       },
       "locked": {
-        "lastModified": 1693924059,
-        "narHash": "sha256-PfxEkc7BHWiIOaFvCLBCxyIRdgSdmMsKU4kHA0E5ps8=",
+        "lastModified": 1697565960,
+        "narHash": "sha256-hTLmU1q+TZ4TH5V71FvXSSpJpJDEIvH5cEsGuouR2q4=",
         "owner": "zigtools",
         "repo": "zls",
-        "rev": "7aeb758e9e652c3bad8fd11d1fb146328a3edbd3",
+        "rev": "e4593da63e57f83d40507b958c0b81125dd55156",
         "type": "github"
       },
       "original": {
         "owner": "zigtools",
-        "ref": "7aeb758",
         "repo": "zls",
+        "rev": "e4593da63e57f83d40507b958c0b81125dd55156",
         "type": "github"
       }
     }

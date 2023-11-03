@@ -37,3 +37,58 @@ test "foobar" {
 
     // MyStepImpl.make(&impl.my_step);
 }
+
+const Container = union(enum) {
+    none: void,
+
+    left: *Child,
+    right: *Child,
+
+    fn parent(self: Container) ?*Parent {
+        return switch (self) {
+            .none => null,
+            .left => |ptr| @fieldParentPtr(Parent, "left", ptr),
+            .right => |ptr| @fieldParentPtr(Parent, "right", ptr),
+        };
+    }
+};
+
+const Child = struct {
+    name: []const u8,
+    container: Container = .{ .none = {} },
+
+    fn parentName(self: *Child) ?[]const u8 {
+        const parent = self.container.parent() orelse return null;
+        return parent.name;
+    }
+};
+
+const Parent = struct {
+    name: []const u8,
+
+    left: Child,
+    right: Child,
+};
+
+test "child and parent" {
+    const expect = std.testing.expect;
+    var alloc = std.testing.allocator;
+
+    var parent = try alloc.create(Parent);
+    defer alloc.destroy(parent);
+
+    parent.name = "bob";
+
+    var child1 = Child{ .name = "child1" };
+    parent.left = child1;
+    child1.container = .{ .left = &parent.left };
+
+    var child2 = Child{ .name = "child2" };
+    parent.right = child2;
+    child2.container = .{ .right = &parent.right };
+
+    const name1 = child1.parentName() orelse unreachable;
+    try expect(std.mem.eql(u8, name1, "bob"));
+    const name2 = child2.parentName() orelse unreachable;
+    try expect(std.mem.eql(u8, name2, "bob"));
+}

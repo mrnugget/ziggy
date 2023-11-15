@@ -5,7 +5,7 @@
   inputs = {
     zig-overlay.url = "github:mitchellh/zig-overlay";
     zig-overlay.inputs.nixpkgs.follows = "nixpkgs";
-    zls-master.url = "github:zigtools/zls/e4593da63e57f83d40507b958c0b81125dd55156";
+    zls-master.url = "github:zigtools/zls/e89b712e69baa7f745d2d146ca3231264978f1d6";
     zls-master.inputs.nixpkgs.follows = "nixpkgs";
   };
 
